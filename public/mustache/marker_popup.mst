@@ -1,0 +1,17 @@
+<h6 class="title is-6">{{ name }}</h6>
+<p>
+{{ label }}
+</p>
+<p class="control">
+<a class="button is-link" href="{{ direction_url }}" target="_blank">
+    <span class="icon">
+    <i class="fas fa-directions"></i>
+    </span>
+    <span>Itinéraire<span>
+</a>
+</p>
+{{#categories}}
+<span class="tag">
+  {{name}}
+</span>
+{{/categories}}
