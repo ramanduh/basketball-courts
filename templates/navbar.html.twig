@@ -1,0 +1,48 @@
+<nav class="navbar has-shadow">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+    <img src={{ asset('/img/logo_navbar.png') }} alt="Playgrounds">
+    </a>
+
+
+    <div class="navbar-burger burger" data-target="mainNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="mainNav" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="{{ url('map') }}">
+          <span><i class="fas fa-map-marked-alt"></i></span> &nbsp;Map
+      </a>
+      <a class="navbar-item" href="#">
+          <span><i class="fas fa-info-circle"></i></span> &nbsp;A propos
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" href="#" title="Add playground">
+              <span>Add playground</span>
+            </a>
+          </p>
+          <p class="control">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a class="button is-danger" href="{{ url('logout') }}" title="Logout">
+              <span>Logout</span>
+            </a>
+            {% else %}
+            <a class="button is-primary" href="{{ url('login') }}" title="Login">
+              <span>Login</span>
+            </a>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
